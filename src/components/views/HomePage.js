@@ -4,7 +4,7 @@ import ItemMovie from '../MoviesGallery/itemGallery';
 import PageHeading from '../PageHeading/PageHeading';
 import * as apiFilms from '../service/moviesApi';
 
-function HomeView() {
+function HomeView({ moviesList }) {
   const [trendingMovies, setTrendingMovies] = useState([]);
   useEffect(() => {
     apiFilms.fetchTrending().then(resp => setTrendingMovies(resp.results));

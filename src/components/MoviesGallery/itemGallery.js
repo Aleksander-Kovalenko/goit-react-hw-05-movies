@@ -1,8 +1,15 @@
 const ItemMovie = ({ moviesList }) => {
-  console.log(moviesList);
+  function onHandleClickImg(e) {
+    console.log(e.target);
+  }
+
   return (
-    <li>
-      <img src={moviesList.poster_path} alt={moviesList.original_title} />
+    <li onClick={onHandleClickImg}>
+      <img
+        src={`https://www.themoviedb.org/t/p/w500${moviesList.backdrop_path}`}
+        alt={moviesList.original_title}
+      />
+      <p>{moviesList.original_title}</p>
     </li>
   );
 };

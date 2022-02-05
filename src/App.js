@@ -1,22 +1,26 @@
 import { BrowserRouter, Switch, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.styled.jsx';
 import { HeaderWrapper } from './App.styled.jsx';
-import Header from './components/AppBar/AppBar.jsx';
-import HomeView from './components/views/HomeView';
+import AppBar from './components/AppBar/AppBar.jsx';
+import HomePage from './components/views/HomePage';
+import MoviesPage from './components/views/MoviesPage.js';
+import { Form } from './components/Form/Form.jsx';
+// import { Form } from '../';
 
 function App() {
-  // const [query, setQuery] = useState('');
-  // const [filmList, setFilmList] = useState([]);
+  const [query, setQuery] = useState([]);
 
   return (
     <BrowserRouter>
       <HeaderWrapper>
-        <Header />
+        <AppBar />
+        <Form userQuery={setQuery} />
       </HeaderWrapper>
 
       <Routes>
-        <Route path="/" element={<HomeView />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movies" element={<MoviesPage query={query} />} />
       </Routes>
     </BrowserRouter>
   );

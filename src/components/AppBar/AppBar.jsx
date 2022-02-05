@@ -1,13 +1,11 @@
-import { Form } from '../Form/Form';
 import Navigation from '../Navigation/Navigation';
 
-const Header = () => {
+const AppBar = () => {
   return (
     <>
       <Navigation />
-      <Form />
     </>
   );
 };
 
-export default Header;
+export default AppBar;
