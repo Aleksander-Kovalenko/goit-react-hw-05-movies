@@ -6,7 +6,7 @@ export const SearchBar = styled.form`
   position: relative;
   width: auto;
   float: right;
-  margin-right: 30px;
+  // margin-right: 30px;
 `;
 
 export const SearchInput = styled.input`

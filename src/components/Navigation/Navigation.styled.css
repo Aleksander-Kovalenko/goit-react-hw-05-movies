@@ -1,0 +1,7 @@
+.navigation-list {
+  text-transform: uppercase;
+}
+
+.link:not(:last-child) {
+  margin-right: 10px;
+}

@@ -1,10 +1,17 @@
 import { NavLink, Link } from 'react-router-dom';
+import stye from './Navigation.styled.css';
 
-export const Navigation = () => {
+const Navigation = () => {
   return (
-    <nav>
-      <NavLink to="/home">Home</NavLink>
-      <NavLink to="/movies">Movies</NavLink>
+    <nav className="navigation-list">
+      <NavLink to="/" className="link">
+        Home
+      </NavLink>
+      <NavLink to="/movies" className="link">
+        Movies
+      </NavLink>
     </nav>
   );
 };
+
+export default Navigation;
