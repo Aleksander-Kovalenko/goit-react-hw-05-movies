@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import MoviesGallery from '../MoviesGallery/MoviesGallery';
-import ItemMovie from '../MoviesGallery/itemGallery';
+import ItemGallery from '../MoviesGallery/ItemGallery';
 import PageHeading from '../PageHeading/PageHeading';
 import * as apiFilms from '../service/moviesApi';
 
-function HomeView({ moviesList }) {
+function HomeView() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   useEffect(() => {
-    apiFilms.fetchTrending().then(resp => setTrendingMovies(resp.results));
+    apiFilms.fetchTrending('day').then(resp => setTrendingMovies(resp.results));
   }, []);
 
   return (
@@ -15,7 +15,7 @@ function HomeView({ moviesList }) {
       <PageHeading text="Добро пожаловать" />
       <MoviesGallery>
         {trendingMovies.map(item => (
-          <ItemMovie moviesList={item} key={item.id} />
+          <ItemGallery moviesList={item} key={item.id} />
         ))}
       </MoviesGallery>
     </>

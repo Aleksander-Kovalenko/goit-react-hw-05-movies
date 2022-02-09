@@ -6,8 +6,8 @@ async function fetchWIthErrorHandling(url = '') {
   return response.ok ? await response.json() : console.log('Not Found');
 }
 
-export function fetchTrending() {
-  return fetchWIthErrorHandling(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
+export function fetchTrending(period) {
+  return fetchWIthErrorHandling(`${BASE_URL}/trending/movie/${period}?api_key=${API_KEY}`);
 }
 
 export function searchMovies(query) {
