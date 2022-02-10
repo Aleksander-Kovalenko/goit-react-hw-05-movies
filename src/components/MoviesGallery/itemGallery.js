@@ -1,13 +1,19 @@
 import CardMovie from './CardMovie';
+import { Link, useParams } from 'react-router-dom';
 
-const ItemGallery = ({ movieList }) => {
+const ItemGallery = ({ moviesList }) => {
   function onHandleClickImg(e) {
     console.log(e.target);
   }
-  console.log(movieList);
+  let params = useParams();
+  console.log(params);
   return (
     <li onClick={onHandleClickImg}>
-      <CardMovie url={movieList.backdrop_path} title={movieList.original_title} id={movieList.id} />
+      <img
+        src={`https://www.themoviedb.org/t/p/w500${moviesList.backdrop_path}`}
+        alt={moviesList.original_title}
+      />
+      <Link to={`/movies/${moviesList.id}`}>{moviesList.original_title}</Link>
     </li>
   );
 };

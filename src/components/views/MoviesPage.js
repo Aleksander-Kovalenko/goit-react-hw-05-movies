@@ -12,10 +12,9 @@ function MoviesPage() {
 
   return (
     <MovieGallery>
-      {moviesList.map(item =>
-        console.log(item),
-        // <ItemGallery movieList={item} key={item.id} />
-      )}
+      {moviesList.map(item => (
+        <ItemGallery moviesList={item} key={item.id} />
+      ))}
     </MovieGallery>
   );
 }

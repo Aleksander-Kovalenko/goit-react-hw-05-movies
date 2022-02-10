@@ -7,6 +7,7 @@ import HomePage from './components/views/HomePage';
 import MoviesPage from './components/views/MoviesPage.js';
 import { Form } from './components/Form/Form.jsx';
 import NotFoundPage from './components/views/NotFoundePage.js';
+import CardMovie from './components/MoviesGallery/CardMovie.js';
 // import { Form } from '../';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
-        {/* <Route path="/movies/:movieId"></Route> */}
+        <Route path="/movies/:movieId" element={<CardMovie />} />
         <Route element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

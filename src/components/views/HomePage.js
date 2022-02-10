@@ -13,11 +13,13 @@ function HomeView() {
   return (
     <>
       <PageHeading text="Добро пожаловать" />
-      <MoviesGallery>
-        {trendingMovies.map(item => (
-          <ItemGallery moviesList={item} key={item.id} />
-        ))}
-      </MoviesGallery>
+      {trendingMovies && (
+        <MoviesGallery>
+          {trendingMovies.map(item => (
+            <ItemGallery moviesList={item} key={item.id} />
+          ))}
+        </MoviesGallery>
+      )}
     </>
   );
 }
