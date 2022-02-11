@@ -3,18 +3,17 @@ import MovieGallery from '../MoviesGallery/MoviesGallery';
 import ItemGallery from '../MoviesGallery/ItemGallery';
 import * as apiFilms from '../service/moviesApi';
 
-function MoviesPage() {
-  const [moviesList, setMoviesList] = useState([]);
+function MoviesPage({ searchMovie }) {
+  const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    apiFilms.fetchTrending('week').then(resp => setMoviesList(resp.results));
-  }, []);
+    if (!searchMovie.length) return;
+    apiFilms.searchMovies(searchMovie).then(resp => setMovie(resp.results));
+  }, [searchMovie]);
 
   return (
     <MovieGallery>
-      {moviesList.map(item => (
-        <ItemGallery moviesList={item} key={item.id} />
-      ))}
+      {movie && movie.map(item => <ItemGallery moviesList={item} key={item.id} />)}
     </MovieGallery>
   );
 }

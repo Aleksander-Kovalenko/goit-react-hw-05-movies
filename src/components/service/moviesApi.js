@@ -22,6 +22,12 @@ export function movieDetails(movieId) {
 
 export function movieReviews(movieId) {
   return fetchWIthErrorHandling(
-    `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`,
+    `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
+  );
+}
+
+export function movieCastAndCrew(movieId) {
+  return fetchWIthErrorHandling(
+    `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
   );
 }
