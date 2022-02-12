@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const ItemGallery = ({ moviesList }) => {
   return (
@@ -7,7 +7,7 @@ const ItemGallery = ({ moviesList }) => {
         src={`https://www.themoviedb.org/t/p/w500${moviesList.backdrop_path}`}
         alt={moviesList.original_title}
       />
-      <Link to={`movies/${moviesList.id}`}>{moviesList.original_title}</Link>
+      <NavLink to={`${moviesList.id}`}>{moviesList.original_title}</NavLink>
     </li>
   );
 };

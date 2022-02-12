@@ -1,7 +1,7 @@
 import { BsFilm } from 'react-icons/bs';
 import { SearchBar, SearchInput, IconButton } from './Form.styled';
 
-export function Form({ userQuery }) {
+export function Form({ setQuery }) {
   const submitForm = e => {
     e.preventDefault();
 
@@ -10,7 +10,7 @@ export function Form({ userQuery }) {
       return alert('Пустая строка');
     }
 
-    userQuery(e.target.query.value);
+    setQuery(e.target.query.value);
     resetForm(e);
   };
 

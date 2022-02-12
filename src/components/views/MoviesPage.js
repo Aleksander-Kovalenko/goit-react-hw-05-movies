@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
+
 import MovieGallery from '../MoviesGallery/MoviesGallery';
 import ItemGallery from '../MoviesGallery/ItemGallery';
 import * as apiFilms from '../service/moviesApi';
 
-function MoviesPage({ searchMovie }) {
+function MoviesPage({ changeMovies }) {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    if (!searchMovie.length) return;
-    apiFilms.searchMovies(searchMovie).then(resp => setMovie(resp.results));
-  }, [searchMovie]);
+    if (!changeMovies.length) return;
+    apiFilms.searchMovies(changeMovies).then(resp => setMovie(resp.results));
+  }, [changeMovies]);
 
   return (
     <MovieGallery>

@@ -5,9 +5,7 @@ import MovieCast from './MovieCast';
 
 const MovieDetailsPage = () => {
   let { movieId } = useParams();
-
-  console.log('hell');
-
+  console.log(movieId);
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
@@ -25,16 +23,16 @@ const MovieDetailsPage = () => {
       <p>{movie.original_title}</p>
       <p>{movie.overview}</p>
       <hr />
-      <Link to={`/movie/${movie.id}/cast`}>Show</Link>
+      {/* <Link to={`/movie/${movie.id}/cast`}>Show</Link> */}
       {/* <Outlet /> */}
       {/* <button type="button" onClick={() => setCastShow(!castShow)}>
         Show Cast
       </button> */}
-      <Routes>
+      {/* <Routes>
         <Route path={`/movie/${movie.id}`} element={<MovieDetailsPage />}>
           <Route path="cast" element={<MovieCast movies={movie} />} />
         </Route>
-      </Routes>
+      </Routes> */}
     </>
   );
 };
