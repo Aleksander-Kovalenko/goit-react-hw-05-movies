@@ -1,16 +1,19 @@
 import { BsFilm } from 'react-icons/bs';
 import { SearchBar, SearchInput, IconButton } from './Form.styled';
+import { useNavigate } from 'react-router-dom';
 
-export function Form({ setQuery }) {
+export function Form({ changeMovies }) {
+  let navigate = useNavigate();
   const submitForm = e => {
     e.preventDefault();
+    navigate('movies');
 
     if (!e.target.query.value.trim()) {
       resetForm(e);
       return alert('Пустая строка');
     }
 
-    setQuery(e.target.query.value);
+    changeMovies(e.target.query.value);
     resetForm(e);
   };
 

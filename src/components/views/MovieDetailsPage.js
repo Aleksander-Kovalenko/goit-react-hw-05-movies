@@ -1,11 +1,13 @@
 import { Link, useParams, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as apiMovies from '../service/moviesApi';
-import MovieCast from './MovieCast';
+import MovieCast from '../MovieDetailsPage/MovieCast.js';
 
 const MovieDetailsPage = () => {
   let { movieId } = useParams();
+
   console.log(movieId);
+
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
