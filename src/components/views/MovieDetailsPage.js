@@ -1,4 +1,4 @@
-import { Link, useParams, Routes, Route } from 'react-router-dom';
+import { Outlet, Link, useParams, useNavigate, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as apiMovies from '../service/moviesApi';
 import MovieCast from '../MovieDetailsPage/MovieCast.js';
@@ -25,14 +25,22 @@ const MovieDetailsPage = () => {
       <p>{movie.original_title}</p>
       <p>{movie.overview}</p>
       <hr />
-      {/* <Link to={`/movie/${movie.id}/cast`}>Show</Link> */}
-      {/* <Outlet /> */}
-      {/* <button type="button" onClick={() => setCastShow(!castShow)}>
+      <Link to="/movie/new/cast">Show</Link>
+      <Outlet />
+
+      <button
+        type="submitgit agit add git "
+        onSubmit={e => {
+          // setCastShow(!castShow);
+          let navigation = useNavigate();
+          navigation(`/movie/new/cast`);
+        }}
+      >
         Show Cast
-      </button> */}
+      </button>
       {/* <Routes>
-        <Route path={`/movie/${movie.id}`} element={<MovieDetailsPage />}>
-          <Route path="cast" element={<MovieCast movies={movie} />} />
+        <Route path="/movie" element={<MovieDetailsPage />}>
+          <Route path=":movieId/cast" element={<MovieCast movies={movie} />} />
         </Route>
       </Routes> */}
     </>

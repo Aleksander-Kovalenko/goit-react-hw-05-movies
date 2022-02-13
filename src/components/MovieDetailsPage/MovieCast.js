@@ -6,7 +6,7 @@ import { IconContext } from 'react-icons';
 
 const MovieCast = ({ movies }) => {
   let { movieId } = useParams();
-  console.log(movies);
+  console.log(movieId);
   //   const [cast, setCast] = useState([]);
   //   console.log(cast);
   //   useEffect(() => {

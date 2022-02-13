@@ -10,6 +10,7 @@ import MovieDetailsPage from './components/views/MovieDetailsPage.js';
 
 // _______________________________________________
 import AppLayout from './components/AppBar/AppLayout.js';
+import MovieCast from './components/MovieDetailsPage/MovieCast.js';
 
 function App() {
   const [query, setQuery] = useState([]);
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage changeMovies={query} />} />
           <Route path="movies/:movieId" element={<MovieDetailsPage />} />
+          <Route path="movies/:movieId/cast" element={<MovieCast />} />
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />
