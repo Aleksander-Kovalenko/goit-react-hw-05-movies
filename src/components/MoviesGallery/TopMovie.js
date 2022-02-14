@@ -1,8 +1,7 @@
-import { Description, GalleryItem, Images, TopImg, TopWrap } from './Views.styled';
+import { TopImg, TopWrap, TopDes } from './Views.styled';
 import { NavLink } from 'react-router-dom';
 
 export const TopMovies = ({ movie }) => {
-  console.log(movie);
   return (
     <>
       {movie && (
@@ -11,9 +10,9 @@ export const TopMovies = ({ movie }) => {
             src={`https://www.themoviedb.org/t/p/w500${movie.backdrop_path}`}
             alt={movie.original_title}
           />
-          <div>
+          <TopDes>
             <NavLink to={`${movie.id}`}>{movie.original_title}</NavLink>
-          </div>
+          </TopDes>
         </TopWrap>
       )}
     </>

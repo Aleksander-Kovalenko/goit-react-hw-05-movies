@@ -16,12 +16,14 @@ function MoviesPage({ changeMovies }) {
   return (
     <>
       <TopMovies movie={movie[0]} />
-      {movie && (
+      {movie.length > 0 ? (
         <MovieGallery>
           {movie.map(item => (
             <ItemGallery moviesList={item} key={item.id} />
           ))}
         </MovieGallery>
+      ) : (
+        <div style={{ fontSize: '30px' }}>Please search Film</div>
       )}
     </>
   );

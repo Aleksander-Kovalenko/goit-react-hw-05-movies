@@ -40,7 +40,15 @@ export const Description = styled.div`
 
 export const TopWrap = styled.div`
   text-align: center;
+  margin: 20px 0;
 `;
 export const TopImg = styled.img`
+  display: block;
   width: 100%;
+  margin: 0;
+`;
+
+export const TopDes = styled.div`
+  padding: 20px 0;
+  font-size: 18px;
 `;

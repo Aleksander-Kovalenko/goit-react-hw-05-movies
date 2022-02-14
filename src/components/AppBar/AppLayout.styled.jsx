@@ -22,3 +22,7 @@ export const Footer = styled.footer`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const Main = styled.main`
+  height: 100vh;
+`;

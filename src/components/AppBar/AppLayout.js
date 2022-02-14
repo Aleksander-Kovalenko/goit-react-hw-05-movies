@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Form } from '../Form/Form';
 import Navigation from '../Navigation/Navigation';
-import { Header, Wrapper, Footer } from './AppLayout.styled';
+import { Header, Wrapper, Footer, Main } from './AppLayout.styled';
 
 const AppLayout = ({ userQuery }) => {
   return (
@@ -11,11 +11,11 @@ const AppLayout = ({ userQuery }) => {
         <Form changeMovies={userQuery} />
       </Header>
 
-      <main>
+      <Main>
         <Wrapper>
           <Outlet />
         </Wrapper>
-      </main>
+      </Main>
 
       <Footer>By Alexander Kovalenko</Footer>
     </>
