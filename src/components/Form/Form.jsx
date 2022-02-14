@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function Form({ changeMovies }) {
   let navigate = useNavigate();
+
   const submitForm = e => {
     e.preventDefault();
     navigate('movies');
