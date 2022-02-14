@@ -20,12 +20,15 @@ function App() {
       <Routes>
         <Route path="/" element={<AppLayout userQuery={setQuery} />}>
           <Route index element={<HomePage />} />
-          <Route path="movies" element={<MoviesPage changeMovies={query} />} />
-          <Route path="movies/:movieId" element={<MovieDetailsPage />} />
-          <Route path="movies/:movieId/cast" element={<MovieCast />} />
-        </Route>
+          <Route path="movies" element={<MoviesPage changeMovies={query} />}>
+            <Route path="movies/:movieId/cast" element={<MovieCast />} />
+            <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
 
-        <Route path="*" element={<NotFoundPage />} />
+            {/* <Route index element/>  При переходе на вкладку movies без ранее созданого запроса создать уведомление которое будет подсвечивать форму поиска фильма */}
+          </Route>
+
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
 
       {/* <HeaderWrapper>

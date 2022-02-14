@@ -6,13 +6,14 @@ import MovieCast from '../MovieDetailsPage/MovieCast.js';
 const MovieDetailsPage = () => {
   let { movieId } = useParams();
 
-  console.log(movieId);
+  let navigation = useNavigate();
 
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     apiMovies.movieDetails(movieId).then(response => setMovie(response));
   }, [movieId]);
+  console.log(movieId);
 
   return (
     <>
@@ -25,19 +26,9 @@ const MovieDetailsPage = () => {
       <p>{movie.original_title}</p>
       <p>{movie.overview}</p>
       <hr />
-      <Link to="/movie/new/cast">Show</Link>
+      <Link to={`/movies/${movie.id}/cast`}>Show</Link>
       <Outlet />
 
-      <button
-        type="submitgit agit add git "
-        onSubmit={e => {
-          // setCastShow(!castShow);
-          let navigation = useNavigate();
-          navigation(`/movie/new/cast`);
-        }}
-      >
-        Show Cast
-      </button>
       {/* <Routes>
         <Route path="/movie" element={<MovieDetailsPage />}>
           <Route path=":movieId/cast" element={<MovieCast movies={movie} />} />
