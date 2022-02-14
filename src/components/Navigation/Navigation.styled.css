@@ -2,6 +2,12 @@
   text-transform: uppercase;
 }
 
+.link {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .link:not(:last-child) {
   margin-right: 10px;
 }

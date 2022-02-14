@@ -1,5 +1,7 @@
+import { GalleryList } from './Views.styled';
+
 const MovieGallery = ({ children }) => {
-  return <ul>{children}</ul>;
+  return <GalleryList>{children}</GalleryList>;
 };
 
 export default MovieGallery;

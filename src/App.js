@@ -20,8 +20,6 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<div></div>}></Suspense>
-
       <Routes>
         <Route path="/" element={<AppLayout userQuery={setQuery} />}>
           <Route index element={<HomePage />} />

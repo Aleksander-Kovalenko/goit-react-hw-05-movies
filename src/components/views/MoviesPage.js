@@ -2,20 +2,28 @@ import { useEffect, useState } from 'react';
 
 import MovieGallery from '../MoviesGallery/MoviesGallery';
 import ItemGallery from '../MoviesGallery/ItemGallery';
-import * as apiFilms from '../service/moviesApi';
+import * as apiMovies from '../service/moviesApi';
+import { TopMovies } from '../MoviesGallery/TopMovie';
 
 function MoviesPage({ changeMovies }) {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     if (!changeMovies.length) return;
-    apiFilms.searchMovies(changeMovies).then(resp => setMovie(resp.results));
+    apiMovies.searchMovies(changeMovies).then(resp => setMovie(resp.results));
   }, [changeMovies]);
 
   return (
-    <MovieGallery>
-      {movie && movie.map(item => <ItemGallery moviesList={item} key={item.id} />)}
-    </MovieGallery>
+    <>
+      <TopMovies movie={movie[0]} />
+      {movie && (
+        <MovieGallery>
+          {movie.map(item => (
+            <ItemGallery moviesList={item} key={item.id} />
+          ))}
+        </MovieGallery>
+      )}
+    </>
   );
 }
 

@@ -12,7 +12,7 @@ function HomeView() {
 
   return (
     <>
-      <PageHeading text="Добро пожаловать" />
+      {/* <PageHeading text="Добро пожаловать" /> */}
       {trendingMovies && (
         <MoviesGallery>
           {trendingMovies.map(item => (

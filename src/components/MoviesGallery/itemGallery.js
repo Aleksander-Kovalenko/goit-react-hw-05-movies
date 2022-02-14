@@ -1,14 +1,17 @@
 import { NavLink } from 'react-router-dom';
+import { Description, GalleryItem, Images } from './Views.styled';
 
 const ItemGallery = ({ moviesList }) => {
   return (
-    <li>
-      <img
+    <GalleryItem>
+      <Images
         src={`https://www.themoviedb.org/t/p/w500${moviesList.backdrop_path}`}
         alt={moviesList.original_title}
       />
-      <NavLink to={`${moviesList.id}`}>{moviesList.original_title}</NavLink>
-    </li>
+      <Description>
+        <NavLink to={`${moviesList.id}`}>{moviesList.original_title}</NavLink>
+      </Description>
+    </GalleryItem>
   );
 };
 

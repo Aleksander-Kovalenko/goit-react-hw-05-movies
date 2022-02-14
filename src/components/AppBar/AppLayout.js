@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Form } from '../Form/Form';
 import Navigation from '../Navigation/Navigation';
-import { Header } from './AppLayout.styled';
+import { Header, Wrapper, Footer } from './AppLayout.styled';
 
 const AppLayout = ({ userQuery }) => {
   return (
@@ -12,10 +12,12 @@ const AppLayout = ({ userQuery }) => {
       </Header>
 
       <main>
-        <Outlet />
+        <Wrapper>
+          <Outlet />
+        </Wrapper>
       </main>
 
-      <footer>By Alexander Kovalenko</footer>
+      <Footer>By Alexander Kovalenko</Footer>
     </>
   );
 };

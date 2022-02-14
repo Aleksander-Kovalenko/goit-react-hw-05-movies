@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import stye from './Navigation.styled.css';
+import style from './Navigation.styled.css';
 
 const Navigation = () => {
   return (
