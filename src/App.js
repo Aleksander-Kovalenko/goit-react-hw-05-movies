@@ -10,7 +10,7 @@ import MovieDetailsPage from './components/views/MovieDetailsPage.js';
 
 // _______________________________________________
 import AppLayout from './components/AppBar/AppLayout.js';
-import MovieCast from './components/MovieDetailsPage/MovieCast.js';
+import Cast from './components/Cast/Cast.js';
 
 function App() {
   const [query, setQuery] = useState([]);
@@ -21,33 +21,15 @@ function App() {
         <Route path="/" element={<AppLayout userQuery={setQuery} />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage changeMovies={query} />}>
-            <Route path="movies/:movieId/cast" element={<MovieCast />} />
-            <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
-
             {/* <Route index element/>  При переходе на вкладку movies без ранее созданого запроса создать уведомление которое будет подсвечивать форму поиска фильма */}
+          </Route>
+          <Route path="movies/:movieId" element={<MovieDetailsPage />}>
+            <Route path="cast" element={<Cast />} />
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-
-      {/* <HeaderWrapper>
-        <AppBar />
-        <Form userQuery={setQuery} />
-      </HeaderWrapper> */}
-      {/* <Routes> */}
-      {/* <Route path="/" element={<HomePage />} /> */}
-      {/* <Route path="movies" element={<MoviesPage searchMovie={query} />}> */}
-      {/* <Route path="movies/:movieId" element={<MovieDetailsPage />} /> */}
-      {/* <Route path="movies/cast" element={<MovieCast movies={query} />} /> */}
-      {/* </Route> */}
-      {/* <Route path="/movies/:movieId" element={<MovieDetailsPage />} /> */}
-      {/* <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesPage searchMovie={query} />} />
-         */}
-      {/* <Route path="/movie/:movieId/cast" /> */}
-      {/* <Route path="*" element={<NotFoundPage />} />
-      </Routes> */}
     </>
   );
 }

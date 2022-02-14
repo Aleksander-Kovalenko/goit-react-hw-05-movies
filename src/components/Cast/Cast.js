@@ -4,18 +4,20 @@ import { useEffect, useState } from 'react';
 import { FaUserNinja } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 
-const MovieCast = ({ movies }) => {
+import * as apiMovies from '../service/moviesApi.js';
+
+const Cast = () => {
   let { movieId } = useParams();
-  console.log(movieId);
-  //   const [cast, setCast] = useState([]);
-  //   console.log(cast);
-  //   useEffect(() => {
-  //     apiMovies.movieCastAndCrew(movieId).then(response => setCast(response.cast));
-  //   }, [movieId]);
+
+  const [cast, setCast] = useState([]);
+
+  useEffect(() => {
+    apiMovies.movieCastAndCrew(movieId).then(response => setCast(response.cast));
+  }, [movieId]);
 
   return (
     <>
-      {/* <ul>
+      <ul>
         {cast.map(item => (
           <li key={item.id}>
             {item.profile_path ? (
@@ -30,9 +32,9 @@ const MovieCast = ({ movies }) => {
             <p>{item.name}</p>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </>
   );
 };
 
-export default MovieCast;
+export default Cast;
