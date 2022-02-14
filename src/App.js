@@ -11,6 +11,7 @@ import MovieDetailsPage from './components/views/MovieDetailsPage.js';
 // _______________________________________________
 import AppLayout from './components/AppBar/AppLayout.js';
 import Cast from './components/Cast/Cast.js';
+import Reviews from './components/Reviews/Reviews.js';
 
 function App() {
   const [query, setQuery] = useState([]);
@@ -25,6 +26,7 @@ function App() {
           </Route>
           <Route path="movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />

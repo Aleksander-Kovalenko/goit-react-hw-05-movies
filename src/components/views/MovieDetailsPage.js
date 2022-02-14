@@ -24,7 +24,10 @@ const MovieDetailsPage = () => {
       <p>{movie.overview}</p>
 
       <hr />
+
       <Link to={`/movies/${movie.id}/cast`}>Cast</Link>
+      <br />
+      <Link to={`/movies/${movie.id}/reviews`}>Reviews</Link>
       <Outlet />
     </>
   );
