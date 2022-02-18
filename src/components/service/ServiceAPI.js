@@ -1,12 +1,21 @@
 const axios = require('axios').default;
 
-const BASE_KEY = '8b5f28a2836b483110232092b0d0adcf';
+const API_KEY = '8b5f28a2836b483110232092b0d0adcf';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
 async function getFetchMovies(url = '') {
-  const response = await axios(url);
-  return response.status ? await response : console.log(response);
+  try {
+    const fetchCollection = await axios.get(url);
+    return fetchCollection.data.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export const getTrendingMoviesDay = () => {
-  getFetchMovies(`https://api.themoviedb.org/3/trending/all/day?api_key=${BASE_KEY}`);
+  return getFetchMovies(`${BASE_URL}/trending/all/day?api_key=${API_KEY}`);
+};
+
+export const getSearchMovies = query => {
+  return getFetchMovies(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`);
 };
