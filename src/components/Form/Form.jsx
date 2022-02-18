@@ -2,10 +2,14 @@ import { useNavigate } from 'react-router';
 
 export const Form = () => {
   const navigate = useNavigate();
+
   const submitForm = e => {
     e.preventDefault();
-    navigate('movies', { state: e.target.search.value });
+    const query = e.target.search.value;
+
+    navigate('movies', { state: query });
   };
+
   return (
     <>
       <form onSubmit={submitForm}>

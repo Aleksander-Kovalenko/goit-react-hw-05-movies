@@ -1,16 +1,22 @@
 import { useState, useEffect } from 'react';
+import { GalleryItem } from '../GalleryList/GalleryItem';
+import { GalleryList } from '../GalleryList/GalleryList';
 import { getTrendingMoviesDay } from '../service/ServiceAPI';
 
 export const HomeView = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getTrendingMoviesDay().then(setMovies);
+    getTrendingMoviesDay().then(response => setMovies(response.results));
   }, []);
 
   return (
     <>
-      <h1>Home View</h1>
+      <GalleryList>
+        {movies.map(item => (
+          <GalleryItem key={item.id} items={item} />
+        ))}
+      </GalleryList>
     </>
   );
 };

@@ -1,17 +1,26 @@
-import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
+import { GalleryItem } from '../GalleryList/GalleryItem';
+import { GalleryList } from '../GalleryList/GalleryList';
 import { getSearchMovies } from '../service/ServiceAPI';
 
 export const MoviesView = () => {
+  const [changeMovies, useChangeMovies] = useState([]);
+
   const location = useLocation();
   const searchElement = location.state;
 
   useEffect(() => {
-    getSearchMovies(searchElement).then(resp => console.log(resp));
+    getSearchMovies(searchElement).then(response => useChangeMovies(response.results));
   }, [searchElement]);
+
   return (
     <>
-      <h1>Movie</h1>
+      <GalleryList>
+        {changeMovies.map(item => (
+          <GalleryItem key={item.id} items={item} />
+        ))}
+      </GalleryList>
     </>
   );
 };
