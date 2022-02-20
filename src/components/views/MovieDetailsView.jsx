@@ -3,7 +3,7 @@ import { Outlet, useParams } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 import { getMovieById } from '../service/ServiceAPI';
 
-export const MovieDetailsView = () => {
+const MovieDetailsView = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -39,3 +39,5 @@ export const MovieDetailsView = () => {
     </>
   );
 };
+
+export default MovieDetailsView;

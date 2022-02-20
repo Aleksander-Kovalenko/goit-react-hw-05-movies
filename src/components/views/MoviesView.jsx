@@ -4,7 +4,7 @@ import { GalleryItem } from '../GalleryList/GalleryItem';
 import { GalleryList } from '../GalleryList/GalleryList';
 import { getSearchMovies } from '../service/ServiceAPI';
 
-export const MoviesView = () => {
+const MoviesView = () => {
   const [changeMovies, useChangeMovies] = useState([]);
 
   const location = useLocation();
@@ -24,3 +24,5 @@ export const MoviesView = () => {
     </>
   );
 };
+
+export default MoviesView;

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getCast } from '../service/ServiceAPI';
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState(null);
 
@@ -16,3 +16,5 @@ export const Cast = () => {
 
   return <>{/* <ul>{cast.map(item => console.log(item))}</ul> */}</>;
 };
+
+export default Cast;
