@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const GalleryItem = ({ items }) => {
   const BASE_IMG_URL = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/';
+
   return (
     <>
       <li style={{ width: '33,33333%', margin: '15px' }}>

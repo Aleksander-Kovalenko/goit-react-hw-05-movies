@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router';
+import style from './Form.module.css';
 
 export const Form = () => {
   const navigate = useNavigate();

@@ -31,7 +31,7 @@ const MovieDetailsView = () => {
           </div>
 
           <div>
-            <NavLink to={`cast`}>Cast</NavLink>
+            <NavLink to="cast">Cast</NavLink>
           </div>
         </article>
       )}
