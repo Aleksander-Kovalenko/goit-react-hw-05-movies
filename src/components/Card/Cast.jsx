@@ -6,18 +6,18 @@ import { CastList, CastItem, Img } from './Card.styled';
 const Cast = () => {
   const { id } = useParams();
 
-  const [athirst, setAthirst] = useState([]);
+  const [cast, setCast] = useState([]);
 
   const BASE_IMG_URL = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/';
 
   useEffect(() => {
-    getCast(id).then(response => setAthirst(response.cast));
+    getCast(id).then(response => setCast(response.cast));
   }, [id]);
 
   return (
     <>
       <CastList>
-        {athirst.map(item => {
+        {cast.map(item => {
           return (
             <CastItem key={item.cast_id}>
               <Img src={`${BASE_IMG_URL}${item.profile_path}`} alt={item.name} />

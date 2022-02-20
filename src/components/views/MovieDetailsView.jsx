@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useParams } from 'react-router';
-import { Link, NavLink } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { getMovieById } from '../service/ServiceAPI';
 
 const MovieDetailsView = () => {
@@ -13,8 +13,13 @@ const MovieDetailsView = () => {
     getMovieById(id).then(setMovie);
   }, [id]);
 
+  const navigation = useNavigate();
+
   return (
     <>
+      <button type="button" onClick={() => navigation(-1)}>
+        Go Back
+      </button>
       {movie && (
         <article style={{}}>
           <div style={{ marginRight: '20px' }}>
@@ -31,7 +36,8 @@ const MovieDetailsView = () => {
           </div>
 
           <div>
-            <NavLink to="cast">Cast</NavLink>
+            <NavLink to="cast">Cast</NavLink> <br />
+            <NavLink to="reviews">Reviews</NavLink>
           </div>
         </article>
       )}

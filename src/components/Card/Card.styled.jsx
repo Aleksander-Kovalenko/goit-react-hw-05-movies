@@ -15,10 +15,6 @@ export const CastItem = styled.li`
   padding: 0;
   text-align: center;
   min-height: 100px;
-
-  &:not(:nth-child(2n-1)) {
-    margin-right: 10px;
-  }
 `;
 export const Img = styled.img`
   display: block;

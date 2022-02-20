@@ -36,14 +36,3 @@ function App() {
   );
 }
 export default App;
-
-//  <Routes>
-//    <Route path="/" element={<Layout />}>
-//      <Route index element={<HomeView />} />
-//      <Route path="movies" element={<MoviesView />} />
-//      <Route path="movies/:id" element={<MovieDetailsView />}>
-//        <Route path="cast" element={<Cast />} />
-//      </Route>
-//      <Route path="*" element={<NotFound />} />
-//    </Route>
-//  </Routes>

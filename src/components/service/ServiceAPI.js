@@ -27,3 +27,7 @@ export const getMovieById = movie_id => {
 export const getCast = movie_id => {
   return getFetchMovies(`${BASE_URL}/movie/${movie_id}/credits?api_key=${API_KEY}`);
 };
+
+export const getReviews = movie_id => {
+  return getFetchMovies(`${BASE_URL}/movie/${movie_id}/reviews?api_key=${API_KEY}`);
+};
