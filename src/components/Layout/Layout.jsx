@@ -1,7 +1,7 @@
 import { Outlet, Link } from 'react-router-dom';
 import { Form } from '../Form/Form';
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <>
       <header>
@@ -18,3 +18,5 @@ export const Layout = () => {
     </>
   );
 };
+
+export default Layout;

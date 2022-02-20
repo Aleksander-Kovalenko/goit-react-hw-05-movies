@@ -3,7 +3,7 @@ import { GalleryItem } from '../GalleryList/GalleryItem';
 import { GalleryList } from '../GalleryList/GalleryList';
 import { getTrendingMoviesDay } from '../service/ServiceAPI';
 
-export const HomeView = () => {
+const HomeView = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -20,3 +20,5 @@ export const HomeView = () => {
     </>
   );
 };
+
+export default HomeView;

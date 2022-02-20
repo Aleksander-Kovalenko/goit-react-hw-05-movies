@@ -29,6 +29,11 @@ body {
   font-size: 14px;
 }
 
+body.is-loader {
+  padding: 0;
+  background-color: black;
+}
+
 /**
  * Render the `main` element consistently in IE.
  */
